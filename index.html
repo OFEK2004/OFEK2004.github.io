@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>מסעדת השלום</title>
+<style>
+  /*Universal styling*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+    font-family: 'Merriweather', sans-serif;
+  }
+  
+  body {
+    background: rgb(245, 245, 245);
+    background: radial-gradient(circle, rgba(245, 245, 245, 1) 0%, rgba(43, 48, 54, 0.8601256642261697) 78%);
+  }
+  
+  /*-----------------------*/
+  
+  /*Styling heading in background image of the verge*/
+  .smgHead {
+    color: white;
+    position: relative;
+    font-weight: 900;
+    text-align: center;
+    top: 21rem;
+    font-size: 2.1rem;
+    opacity: 20%;
+  }
+  
+  .smgHead:hover {
+    color: white;
+    opacity: 85%;
+  }
+  
+  /*--------------------------*/
+  
+  /*Styling the navigation section.*/
+  nav {
+    background-color: rgba(0, 0, 0, 0.69);
+    padding: 50px;
+    /* top: 30rem; */
+    /* position: absolute; */
+    /* width: 100%; */
+    z-index: 10;
+    border-bottom: 2px solid white;
+    border-top: 1px solid white;
+  }
+  
+  nav li {
+    margin: 0.93rem;
+    display: inline-block;
+    padding: 7px;
+    color: white;
+  }
+  
+  nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+  
+  ul {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+  }
+  
+  /*Styling the logo in navbar.*/
+  #name {
+    text-decoration: none;
+    color: white;
+    border: 4px solid white;
+    border-radius: 16px;
+    padding: 12px;
+    font-weight: 900;
+    position: absolute;
+    left: 4%;
+    top: 18px;
+    font-size: 24px;
+  }
+  
+  #name:hover {
+    background-color: #ffffffe8;
+    color: #13002b;
+    box-shadow: 0 0 8px 1.5px #f3f7f3, 0 0 8px 1.5px rgb(245, 245, 245)
+  }
+  
+  /*--------------------------*/
+  
+  /*Enhancing the responsiveness with toggle button.*/
+  nav .toggleBtn i {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    left: 40%;
+    top: 35px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #click {
+    position: absolute;
+    left: 30%;
+    visibility: hidden;
+  }
+  
+  /*--------------------------------------*/
+  
+  .navBar:hover {
+    border: 2px solid white;
+    border-radius: 13px;
+    padding: 10px 20px;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 0 8px 1.5px #f3f7f3, 0 0 8px 1.5px #f3f7f3
+  }
+  
+  /*---------------------------------*/
+  
+  /*Styling the contents included within the main div wrapper.*/
+  .wrapper {
+    position: relative;
+    top: 140px;
+    height: auto;
+  }
+  
+  /*Styling the first section of the div.*/
+  .tech {
+    padding: 50px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100rem;
+  }
+  
+  .container {
+    display: flex;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    flex-wrap: nowrap;
+    -webkit-box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .container .article {
+    max-width: 65%;
+    flex: 1 1 65%;
+    align-self: space-around;
+    justify-content: center;
+    padding: 45px 10px 20px 20px;
+    font-size: 10px;
+    color: white;
+  }
+  
+  .container .article h1 {
+    text-align: right;
+    font-size: 5em;
+  }
+  
+  .container .article p {
+    padding-top: 30px;
+    font-size: 2.3em;
+    line-height: 1.5;
+    text-align: right;
+    opacity: 0.8;
+  }
+  
+  #p2 {
+    padding-top: 15px;
+  }
+  
+  /*-------------------------------*/
+  
+  hr {
+    width: 90%;
+    margin: 50px auto;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  
+  .container1 {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+  
+  .container1 h1 {
+    font-size: 75px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    color: black;
+    opacity: 0.6;
+  }
+  
+  
+  
+  
+  
+  #Designer {
+    margin-bottom: 30px;
+  }
+  
+  #Developer {
+    margin-bottom: 30px;
+  }
+  
+  /*--------------------------------------*/
+  
+  /*Styling the third section of the page.*/
+  .trending {
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .container2 {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  #restHead {
+    font-size: 75px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    color: black;
+    opacity: 0.5;
+  }
+  
+  .restSec {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .frame {
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    perspective: 500px;
+    margin: 0px 10px 35px 10px;
+    -webkit-box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+    border: 0px solid white;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .frame img {
+    width: 300px;
+    height: 310px;
+  }
+  
+  .frame .details {
+    width: 70%;
+    height: 80%;
+    padding: 5% 8%;
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(90deg);
+    transform-origin: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: all 0.4s ease-in;
+    color: white;
+  }
+  
+  .frame:hover .details {
+    transform: translate(-50%, -50%) rotateY(0deg);
+    opacity: 1;
+  }
+  
+  .frame .details h1 {
+    font-weight: bolder;
+    font-size: 18px;
+  }
+  
+  .frame .details p {
+    opacity: 0.7;
+    padding-top: 3px;
+  }
+  
+  /*---------------------------------------------------*/
+  
+  /*Styling the contact section of the page.*/
+  .contactUs {
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+  }
+  
+  .container3 {
+    width: 95%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 20px 20px 50px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    -webkit-box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -12px 12px 9px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .contactSec {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  
+  .container3 h1 {
+    font-size: 75px;
+    font-weight: bold;
+    margin-bottom: 45px;
+  }
+  
+  .segx {
+    width: 33.33%;
+    margin-bottom: 20px;
+  }
+  
+  .segx h3 {
+    font-size: 20px;
+  }
+  
+  .segx p {
+    padding: 20px;
+  }
+  
+  #about p {
+    opacity: 0.8;
+  }
+  
+  #contact span {
+    opacity: 0.8;
+  }
+  
+  #social a {
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    display: inline-block;
+  }
+  
+  #social a:hover {
+    opacity: 0.9;
+    font-size: 28px;
+  }
+  
+  #social .socialIcons {
+    position: relative;
+    top: 35px;
+  }
+  
+  #contact p {
+    line-height: 1.5;
+  }
+  
+  #contact p .mail {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #contact p .mail:hover {
+    opacity: 0.9;
+    font-size: 15.5px;
+  }
+  
+  /*--------------------------------------*/
+  
+  /*Styling the footer section.*/
+  .foot {
+    position: relative;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    width: 100%;
+    padding: 13px;
+    color: white;
+    top: 140px;
+  }
+  
+  .foot a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+  }
+  
+  .foot a:hover {
+    border-bottom: 2px solid white;
+    font-size: 17px;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /*---------------------------------------------*/
+  
+  /*Styling the media queries used in the whole page.*/
+  
+  /*Media query for the contact section.*/
+  @media only screen and (max-width:830px) {
+    .contactSec {
+      flex-direction: column;
+    }
+  
+    .segx {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  
+    #social .socialIcons {
+      top: 20px;
+    }
+  
+    #contact {
+      margin-top: 30px;
+    }
+  }
+  
+  /*------------------------------------*/
+  
+  
+  
+  
+  /*-------------------------------------------------*/
+  
+  @media only screen and (max-width:850px) {
+    .smgHead {
+      font-size: 1.5rem;
+      top: 23.5rem;
+    }
+  
+    nav {
+      top: 27.5rem;
+    }
+  }
+  
+  /*Media query for the navigation section.*/
+  
+  @media only screen and (max-width:834px) {
+    nav ul {
+      position: fixed;
+      top: 540px;
+      left: -110%;
+      background-color: rgba(0, 0, 0, 0.9);
+      height: 250px;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid white;
+      transition: all 0.4s ease;
+    }
+  
+    #click:checked~ul {
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  
+    #click:checked~.toggleBtn i::before {
+      content: "\f00d";
+      transition: all 0.3s ease;
+    }
+  
+    nav ul li {
+      display: block;
+    }
+  
+    #name {
+      font-size: 20px;
+      top: 19px;
+    }
+  
+    nav .toggleBtn i {
+      display: block;
+      left: 88%;
+    }
+  
+    .navBar:hover {
+      padding: 5px 20px;
+    }
+  }
+  
+  /*---------------------------------------------------*/
+  
+  /*Media query for technology section.*/
+  @media only screen and (max-width:1005px) {
+    .container .article {
+      font-size: 9px;
+      padding-top: 40px;
+    }
+  }
+  
+  @media only screen and (max-width:960px) {
+    .container .article {
+      font-size: 8px;
+      padding-top: 35px;
+    }
+  }
+  
+  @media only screen and (max-width:850px) {
+    .container .article {
+      font-size: 7.5px;
+      padding-top: 30px;
+    }
+  }
+  
+  @media only screen and (max-width: 780px) {
+    .container img {
+      display: none;
+    }
+  
+    .container .article {
+      max-width: 100%;
+      font-size: 10px;
+      padding: 25px 10px 20px 20px;
+    }
+  }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/051b3a24e2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <!--Nvaigation section starts.-->
+        <nav>
+         
+        
+          <label for="click" class="toggleBtn"><i class="fas fa-bars"></i></label>
+          <ul>
+            <li><a href="#fourth" class="navBar">צרו קשר</a></li>
+            <li><a href="#first" class="navBar">ראשי</a></li>
+            <li><a href="#third" class="navBar">תפריט</a></li>
+           
+          </ul>
+        </nav>
+        <!--Navigation sections ends.-->
+      </header>
+      
+      <div class="wrapper">
+        <!--First section of the page starts here.-->
+        <section class="tech" id="first">
+          <!--Flex container of this section.-->
+          <div class="container">
+            <figure>
+                <img src="https://www.adelina.org.il/data/slidersAssets/808/elementsAssets/7123/1532_2e89bc4577bd41dd70b3af5096f22674.jpg" alt="Tecnology">
+              </figure>
+            <div class="article">
+              <h1>מסעדת השלום-אודות</h1>
+              <p>מסעדה שאוהבת לארח, מסעדה המייצרת חוויה של מסע המורכב מאוכל מדויק המתבסס על חומרי גלם טריים ועונתיים, קונדיטוריה עילית ויחס אישי הנוצר באופן טבעי בין אורחיה לצוות. המסעדה לוקחת את האוכל הקלאסי והרומנטי לעבר העולם החדש של הקולינריה ומחברת ביניהם.</p>
+  
+            </div>
+          </div>
+          <!--Flex container ends.-->
+        </section>
+      <hr>
+      <!--Third section of the page starts here.-->
+      <section class="trending">
+        <!--Main contents goes here-->
+        <div class="container2" id="third">
+          <!--Heading-->
+          <h1 id="restHead">תפריט-מנות מומלצות</h1>
+          <!--Flex container of this section starts here.-->
+          <div class="restSec">
+            <!--First flex item-->
+            <div class="frame">
+              <img src="https://www.kipa.co.il/userFiles/2_3645d918ad78b5b00995653912d34b34.jpg" alt="פיצה">
+              <div class="details">
+                <h1>פיצה</h1>
+                <p> .פיצה מרגריטה, עם אפשרות לתוספת זיתים/תירס בחמישה שקלים
+                    מחיר למנה:32 שקלים
+                </p>
+              </div>
+            </div>
+            <!--Second flex item-->
+            <div class="frame">
+              <img src="https://www.sugat.com/wp-content/uploads/2019/06/Pasta.jpg" alt="Overwatch">
+              <div class="details">
+                <h1>פסטה</h1>
+                <p>פסטה עם רוטב עגבניות משובח מחיר למנה 30 שקלים</p>
+              </div>
+            </div>
+            <!--Third flex item-->
+            <div class="frame">
+              <img src="https://160cal.com/wp-content/uploads/2020/06/%D7%A6%D7%99%D7%A4%D7%A1-%D7%A1%D7%95%D7%A4%D7%99-%D7%A8%D7%95%D7%97%D7%91.jpg" alt="Witcher">
+              <div class="details">
+                <h1>ציפס</h1>
+                <p> ציפס מתובלן בבזיליקום טרי, מוגש חם מחיר למנה 18 שקלים</p>
+              </div>
+            </div>
+            <!--Fourth flex item-->
+            <div class="frame">
+              <img src="https://www.shep.co.il/upload/images/144109356084.jpg" alt="gta5">
+              <div class="details">
+                <h1>זיווה</h1>
+                <p>זיווה חמה מוגשת עם רסק עגבניות, סחוג ,ביצה,פלפל מחיר למנה 23 שקלים</p>
+              </div>
+            </div>
+            <!--Fifth flex item-->
+            <div class="frame">
+              <img src="https://shimeba.blob.core.windows.net/shimeba-new-container/7072f38917934d94b48c0500e4f5006b.jpg" alt="Counter-Strike">
+              <div class="details">
+                <h1>מלאווח</h1>
+                <p>מלאווח מגולגל מוגש ביצה ורסק עגבניות מחיר למנה 20 שקלים.</p>
+              </div>
+            </div>
+            <!--Sixth flex item-->
+            <div class="frame">
+              <img src="https://chef-lavan.co.il/wp-content/uploads/old-storage/uploads/f_5850234a56a51_1481646922.jpg" alt="Valkyrie">
+              <div class="details">
+                <h1>טוסט</h1>
+                <p>טוסט בהרכבה אישית מחיר 22 שקלים</p>
+              </div>
+            </div>
+            <!--Seventh flex item-->
+            <div class="frame">
+              <img src="http://www.adambavaria.com/wp-content/uploads/2016/06/%D7%91%D7%95%D7%95%D7%90%D7%A8%D7%99%D7%94-%D7%9C%D7%91%D7%9F.jpg" alt="Codww2">
+              <div class="details">
+                <h1>בוואריה</h1>
+                <p>בוואריה תוצרת יד מצופה בסירופ שוקולד חם ובוטנים מחיר 27 שקלים</p>
+              </div>
+            </div>
+            <!--Eighth flex item-->
+            <div class="frame">
+              <img src="https://img.mako.co.il/2009/01/14/chocolate-mousse_c.jpg" alt="Medal-of-Honour">
+              <div class="details">
+                <h1>מוס שוקולד</h1>
+                <p>מוס שוקולד חם מוגש עם כדור גלידה קטן מחיר 24 שקלים </p>
+              </div>
+            </div>
+          </div>
+          <!--Flex container ends here.-->
+        </div>
+      </section>
+
+     
+      <!--Third section of the page ends here.-->
+      <hr>
+      <!--Contact section of the page starts here.-->
+      <section class="contactUs">
+        <!--Mian contents goes here.-->
+        <div class="container3" id="fourth">
+          <!--Heading-->
+          <h1>צרו קשר</h1>
+          <!--Flex container of this section starts here.-->
+          <div class="contactSec">
+            <!--First flex item.-->
+            <div id="about" class="segx">
+              <h3>שעות פעילות</h3>
+              <p>יום א׳-ד׳: 12:00-15:30, 18:00-22:30
+                <br> 
+                יום ה׳: 12:00-15:00, 18:00-23:00
+                <br>
+                יום ו׳: 17:00-23:00
+                <br>
+                יום ש׳: 12:00-16:00, 18:00-22:00</p>
+            </div>
+            <!--Second flex item.-->
+            <div id="social" class="segx">
+              <h3>דברו איתנו ברשתות<!DOCTYPE html>
+              <html lang="en">
+              <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+              </head>
+              <body>
+                
+              </body>
+              </html></h3>
+              <div class="socialIcons">
+                <a href="https://www.facebook.com/" class="socialSites" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/Agreegor" class="socialSites" target="_blank"><i class="fab fa-github-alt"></i></a>
+                <a href="https://www.linkedin.com/in/haxor-gredza-b1a7891b4/" class="socialSites" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/" class="socialSites" target="_blank"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <!--Third flex item.-->
+            <div id="contact" class="segx">
+              <h3>פרטינו</h3>
+              <p>
+                <a href="mailto:Professor_ParadoxGzr@protonmail.com" class="mail">ofekmu4@gmail.com</a>
+                <br>
+                <span>קניון עזריאלי</span>
+                <br>
+                <span>תל אביב</span>
+              </p>
+            </div>
+          </div>
+          <!--Flex container of this section ends here.-->
+        </div>
+      </section>
+      <!--Contact section of the page ends here.-->
+    </div>
+
+
+
+
+
+</body>
+
+
+</html>
